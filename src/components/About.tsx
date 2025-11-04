@@ -44,11 +44,11 @@ function About() {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight px-4">
             About{" "}
             <span className="text-teal-600 dark:text-teal-400">MoveFit</span>
           </h2>
@@ -56,7 +56,7 @@ function About() {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left: Image with decorative elements */}
           <div
             className={`transition-all duration-1000 delay-200 ${
@@ -88,7 +88,7 @@ function About() {
                     </svg>
                   </div>
                   <p className="text-white font-semibold text-lg">
-                    Professional Physiotherapist
+                    Consultant Physiotherapist
                   </p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ function About() {
               {/* Floating badge */}
               <div className="absolute -bottom-4 -right-4 glass-premium dark:glass-dark px-6 py-4 rounded-2xl shadow-lg">
                 <p className="text-teal-600 dark:text-teal-400 font-bold text-2xl">
-                  10+
+                  25+
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">
                   Years Experience
@@ -113,7 +113,7 @@ function About() {
                 : "opacity-0 translate-x-10"
             }`}
           >
-            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8 font-light">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6 sm:mb-8 font-light">
               At MoveFit Physiotherapy Centre Coimbatore, we focus on{" "}
               <span className="font-semibold text-teal-600 dark:text-teal-400">
                 restoring mobility
@@ -137,7 +137,7 @@ function About() {
               ref={cardRef}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              className="glass-premium dark:glass-dark p-8 rounded-3xl border-2 border-teal-100 dark:border-teal-800 shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="glass-premium dark:glass-dark p-6 sm:p-8 rounded-2xl sm:rounded-3xl border-2 border-teal-100 dark:border-teal-800 shadow-lg hover:shadow-2xl transition-all duration-500"
               style={{
                 transformStyle: "preserve-3d",
                 ...tiltStyle,
@@ -164,7 +164,7 @@ function About() {
                 </div>
                 <div style={{ transform: "translateZ(40px)" }}>
                   <p className="text-xl text-gray-900 dark:text-white font-bold mb-2">
-                    R Dharanika B.P.T, M.IA.P
+                    R Dharanika B.P.T, M.I.A.P
                   </p>
                   <p className="text-teal-600 dark:text-teal-400 font-semibold text-lg">
                     Registration No: L - 6208

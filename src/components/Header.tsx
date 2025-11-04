@@ -69,12 +69,15 @@ function Header({ scrolled }: HeaderProps) {
           <img
             src="/assets/logo.jpeg"
             alt="MoveFit Physiotherapy Centre"
-            className="h-14 w-auto object-contain rounded-lg shadow-sm"
+            className="h-12 sm:h-14 w-auto object-contain rounded-lg shadow-sm"
           />
-          <span className="font-bold text-xl tracking-tight text-gray-900 dark:text-white hidden sm:block">
-            MoveFit{" "}
-            <span className="text-teal-600 dark:text-teal-400">
-              Physiotherapy Centre
+          <span className="font-bold text-lg sm:text-xl tracking-tight text-gray-900 dark:text-white">
+            <span className="hidden xs:inline">MoveFit </span>
+            <span className="text-teal-600 dark:text-teal-400 hidden sm:inline">
+              MoveFit Physiotherapy Centre
+            </span>
+            <span className="text-teal-600 dark:text-teal-400 sm:hidden">
+              MoveFit Physiotherapy
             </span>
           </span>
         </div>

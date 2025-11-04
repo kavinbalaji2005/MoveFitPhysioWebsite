@@ -16,9 +16,9 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 dark:from-black dark:via-gray-950 dark:to-black text-white py-16">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 dark:from-black dark:via-gray-950 dark:to-black text-white py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-8 sm:mb-12">
           {/* About */}
           <div>
             <div className="flex items-center space-x-3 mb-6">
@@ -103,7 +103,7 @@ function Footer() {
                   <Mail className="w-4 h-4 text-teal-400" />
                 </div>
                 <a
-                  href="mailto:contact@movefitphysio.com"
+                  href="mailto:contact@movefitphysio.in"
                   className="text-gray-400 hover:text-teal-400 transition-colors text-sm break-all"
                 >
                   contact@movefitphysio.com

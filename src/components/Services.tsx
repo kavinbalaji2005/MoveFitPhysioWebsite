@@ -23,7 +23,7 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`group relative glass-premium dark:glass-dark p-8 rounded-3xl shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-teal-500 dark:hover:border-teal-400 ${
+      className={`group relative glass-premium dark:glass-dark p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-teal-500 dark:hover:border-teal-400 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{
@@ -150,11 +150,11 @@ function Services() {
     <section id="services" ref={sectionRef} className="py-32">
       <div className="max-w-7xl mx-auto px-6">
         <div
-          className={`text-center mb-20 transition-all duration-1000 ${
+          className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight px-4">
             Our{" "}
             <span className="text-teal-600 dark:text-teal-400">
               Physiotherapy Services
@@ -162,13 +162,13 @@ function Services() {
             in Coimbatore
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-600 to-blue-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto px-4">
             Comprehensive rehabilitation services in Coimbatore tailored to your
             needs
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

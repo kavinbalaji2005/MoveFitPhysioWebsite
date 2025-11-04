@@ -30,7 +30,7 @@ function Hero() {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:contact@movefitphysio.com",
+      href: "mailto:contact@movefitphysio.in",
       external: false,
     },
   ];
@@ -68,18 +68,18 @@ function Hero() {
           }`}
         >
           {/* Main headline with gradient */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 leading-tight animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4 sm:mb-6 leading-tight animate-fade-in-up px-4">
             Move Freely.
             <br />
             <span className="text-gradient-animate">Live Fully.</span>
           </h1>
 
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in-up stagger-2">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in-up stagger-2 px-4">
             Personalized physiotherapy and rehabilitation care in Coimbatore.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16 px-4">
             <button
               onClick={() => {
                 const element = document.getElementById("contact");
@@ -87,7 +87,7 @@ function Hero() {
                   element.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="group relative inline-flex items-center justify-center px-10 py-4 bg-gradient-to-r from-teal-600 to-teal-500 text-white rounded-full text-lg font-semibold hover:from-teal-700 hover:to-teal-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-teal-500/50"
+              className="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-teal-600 to-teal-500 text-white rounded-full text-base sm:text-lg font-semibold hover:from-teal-700 hover:to-teal-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-teal-500/50"
             >
               Book an Appointment
               <svg
@@ -106,14 +106,14 @@ function Hero() {
             </button>
             <a
               href="tel:+919894743636"
-              className="inline-flex items-center justify-center px-10 py-4 bg-white dark:bg-gray-800 text-teal-600 dark:text-teal-400 border-2 border-teal-600 dark:border-teal-400 rounded-full text-lg font-semibold hover:bg-teal-50 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 shadow-lg"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 sm:px-10 py-3 sm:py-4 bg-white dark:bg-gray-800 text-teal-600 dark:text-teal-400 border-2 border-teal-600 dark:border-teal-400 rounded-full text-base sm:text-lg font-semibold hover:bg-teal-50 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Call Now
             </a>
           </div>
 
           {/* Contact links - More compact */}
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-4">
             {contactLinks.map((link, index) => (
               <a
                 key={index}

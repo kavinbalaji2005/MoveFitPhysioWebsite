@@ -36,7 +36,7 @@ function ContactCard({ info, index, isVisible }: ContactCardProps) {
           ? "noopener noreferrer"
           : undefined
       }
-      className={`group relative glass-premium dark:glass-dark p-8 rounded-3xl hover:shadow-2xl border-2 border-transparent hover:border-teal-500 dark:hover:border-teal-400 shadow-lg ${
+      className={`group relative glass-premium dark:glass-dark p-6 sm:p-8 rounded-2xl sm:rounded-3xl hover:shadow-2xl border-2 border-transparent hover:border-teal-500 dark:hover:border-teal-400 shadow-lg ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{
@@ -138,8 +138,8 @@ function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "contact@movefitphysio.com",
-      link: "mailto:contact@movefitphysio.com",
+      value: "contact@movefitphysio.in",
+      link: "mailto:contact@movefitphysio.in",
       linkText: "Send Email",
     },
   ];
@@ -148,23 +148,23 @@ function Contact() {
     <section id="contact" ref={sectionRef} className="py-32">
       <div className="max-w-7xl mx-auto px-6">
         <div
-          className={`text-center mb-20 transition-all duration-1000 ${
+          className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight px-4">
             Get in{" "}
             <span className="text-teal-600 dark:text-teal-400">Touch</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-600 to-blue-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto px-4">
             We're here to help you move better every day. Reach out to us
             through any of these channels.
           </p>
         </div>
 
         <div
-          className={`grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto transition-all duration-1000 delay-200 ${
+          className={`grid sm:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16 max-w-5xl mx-auto transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -185,7 +185,7 @@ function Contact() {
           }`}
         >
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl h-[500px] border-4 border-white dark:border-gray-700">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl h-[400px] sm:h-[500px] border-2 sm:border-4 border-white dark:border-gray-700">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0637206064052!2d76.98047157536179!3d11.033846154392146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859f21b5b3481%3A0x4dae5bce27c54629!2sMoveFit%20Physiotherapy%20Centre!5e0!3m2!1sen!2sin!4v1762095530642!5m2!1sen!2sin"
                 width="100%"
@@ -199,14 +199,14 @@ function Contact() {
             </div>
 
             {/* Floating info card on map */}
-            <div className="absolute bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-sm glass-card dark:bg-gray-800/90 dark:backdrop-blur-xl p-6 rounded-2xl shadow-2xl">
-              <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-2">
+            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 md:left-auto md:right-6 md:max-w-sm glass-card dark:bg-gray-800/90 dark:backdrop-blur-xl p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-2xl">
+              <h4 className="font-bold text-gray-900 dark:text-white text-base sm:text-lg mb-2">
                 Visit Our Clinic
               </h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
                 4/13, 2nd Street, P&T Colony Extn, Ganapathy, Coimbatore
               </p>
-              <div className="flex items-center justify-between text-sm">
+              <div className="flex items-center justify-between text-xs sm:text-sm">
                 <div>
                   <p className="text-gray-500 dark:text-gray-400 font-medium">
                     Business Hours
