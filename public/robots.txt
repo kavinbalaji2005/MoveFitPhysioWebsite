@@ -1,0 +1,15 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://movefitphysio.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Disallow search bots from indexing certain paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*.xml$

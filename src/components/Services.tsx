@@ -1,5 +1,94 @@
-import { useEffect, useRef, useState } from 'react';
-import { Activity, Heart, User, Zap } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { Activity, Heart, User, Zap, LucideIcon } from "lucide-react";
+import { useMouseTilt } from "../hooks/useMouseTilt";
+
+interface Service {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  number: string;
+}
+
+interface ServiceCardProps {
+  service: Service;
+  index: number;
+  isVisible: boolean;
+}
+
+function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
+  const { ref, tiltStyle, handleMouseMove, handleMouseLeave } = useMouseTilt(8);
+
+  return (
+    <div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className={`group relative glass-premium dark:glass-dark p-8 rounded-3xl shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-teal-500 dark:hover:border-teal-400 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+      style={{
+        transitionDelay: `${index * 100}ms`,
+        transformStyle: "preserve-3d",
+        ...tiltStyle,
+      }}
+    >
+      {/* Number Badge */}
+      <div className="absolute top-6 right-6 w-12 h-12 bg-teal-50 dark:bg-teal-900/30 rounded-full flex items-center justify-center group-hover:bg-teal-100 dark:group-hover:bg-teal-900/50 transition-colors">
+        <span className="text-teal-600 dark:text-teal-400 font-bold text-lg">
+          {service.number}
+        </span>
+      </div>
+
+      {/* Icon with gradient background */}
+      <div className="relative mb-6" style={{ transform: "translateZ(50px)" }}>
+        <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300">
+          <service.icon className="w-10 h-10 text-white" />
+        </div>
+      </div>
+
+      <h3
+        className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors"
+        style={{ transform: "translateZ(40px)" }}
+      >
+        {service.title}
+      </h3>
+
+      <p
+        className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"
+        style={{ transform: "translateZ(30px)" }}
+      >
+        {service.description}
+      </p>
+
+      {/* Learn More Link */}
+      <button
+        onClick={() => {
+          const element = document.getElementById("contact");
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+        className="inline-flex items-center text-teal-600 dark:text-teal-400 font-semibold group-hover:gap-2 transition-all"
+        style={{ transform: "translateZ(30px)" }}
+      >
+        Learn More
+        <svg
+          className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          />
+        </svg>
+      </button>
+    </div>
+  );
+}
 
 function Services() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,64 +118,64 @@ function Services() {
   const services = [
     {
       icon: Activity,
-      title: 'Manual Therapy',
-      description: 'Hands-on techniques to improve mobility and reduce pain through targeted manipulation and mobilization.'
+      title: "Manual Therapy & Pain Management",
+      description:
+        "Expert manual therapy for back pain treatment, neck pain, shoulder pain, and chronic pain physiotherapy in Coimbatore. Hands-on techniques for effective pain relief.",
+      number: "01",
     },
     {
       icon: Zap,
-      title: 'Sports Injury Rehabilitation',
-      description: 'Specialized recovery programs designed to get athletes back to peak performance safely and efficiently.'
+      title: "Sports Injury Rehabilitation",
+      description:
+        "Specialized sports injury therapy and rehabilitation in Coimbatore. Expert treatment for knee injury rehabilitation and athletic recovery programs.",
+      number: "02",
     },
     {
       icon: User,
-      title: 'Postural Correction',
-      description: 'Comprehensive assessment and treatment to improve alignment, balance, and prevent long-term issues.'
+      title: "Postural Correction & Arthritis Care",
+      description:
+        "Comprehensive postural correction and physiotherapy for arthritis in Coimbatore. Improve alignment, balance, and prevent long-term musculoskeletal issues.",
+      number: "03",
     },
     {
       icon: Heart,
-      title: 'Pain Management',
-      description: 'Evidence-based approaches to reduce chronic and acute pain, restoring quality of life and function.'
-    }
+      title: "Post-Operative Rehabilitation",
+      description:
+        "Specialized post-operative rehabilitation services in Coimbatore. Evidence-based recovery programs to restore function and mobility after surgery.",
+      number: "04",
+    },
   ];
 
   return (
-    <section
-      id="services"
-      ref={sectionRef}
-      className="py-32 bg-gradient-to-b from-white to-gray-50"
-    >
+    <section id="services" ref={sectionRef} className="py-32">
       <div className="max-w-7xl mx-auto px-6">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          className={`text-center mb-20 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-            Our Services
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
+            Our{" "}
+            <span className="text-teal-600 dark:text-teal-400">
+              Physiotherapy Services
+            </span>{" "}
+            in Coimbatore
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-600 to-blue-600 mx-auto rounded-full mb-6"></div>
+          <p className="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto">
+            Comprehensive rehabilitation services in Coimbatore tailored to your
+            needs
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <div
+            <ServiceCard
               key={index}
-              className={`bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 group hover:scale-105 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-900 transition-colors duration-300">
-                <service.icon className="w-8 h-8 text-gray-700 group-hover:text-white transition-colors duration-300" />
-              </div>
-
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                {service.title}
-              </h3>
-
-              <p className="text-gray-600 leading-relaxed">
-                {service.description}
-              </p>
-            </div>
+              service={service}
+              index={index}
+              isVisible={isVisible}
+            />
           ))}
         </div>
       </div>
