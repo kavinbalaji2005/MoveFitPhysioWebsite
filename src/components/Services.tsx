@@ -125,9 +125,9 @@ function Services() {
     },
     {
       icon: Zap,
-      title: "Sports Injury Rehabilitation",
+      title: "Women's Health Physiotherapy",
       description:
-        "Specialized sports injury therapy and rehabilitation in Coimbatore. Expert treatment for knee injury rehabilitation and athletic recovery programs.",
+        "Specialized women's health physiotherapy in Coimbatore. Expert prenatal and postnatal care, pelvic floor therapy, pregnancy-related pain management, and postpartum recovery programs.",
       number: "02",
     },
     {
@@ -139,9 +139,9 @@ function Services() {
     },
     {
       icon: Heart,
-      title: "Post-Operative Rehabilitation",
+      title: "Geriatric Care & Mobility",
       description:
-        "Specialized post-operative rehabilitation services in Coimbatore. Evidence-based recovery programs to restore function and mobility after surgery.",
+        "Specialized geriatric physiotherapy in Coimbatore. Senior care programs focusing on fall prevention, balance improvement, mobility enhancement, and age-related pain management.",
       number: "04",
     },
   ];

@@ -12,7 +12,7 @@ function Header({ scrolled }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "services", "contact"];
+      const sections = ["hero", "about", "services", "pain-locator", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -53,6 +53,7 @@ function Header({ scrolled }: HeaderProps) {
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
+    { id: "pain-locator", label: "Pain Locator" },
     { id: "contact", label: "Contact" },
   ];
 
