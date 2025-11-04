@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import BackToTop from "./components/BackToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,6 +31,7 @@ function App() {
       <Footer />
       <FloatingWhatsApp />
       <BackToTop />
+      <Analytics />
     </div>
   );
 }
