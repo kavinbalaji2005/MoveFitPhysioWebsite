@@ -40,24 +40,6 @@ function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Scrolling Welcome Text */}
-      <div className="absolute top-20 left-0 right-0 z-10 overflow-hidden pointer-events-none py-4">
-        <div className="marquee-wrapper">
-          <div className="marquee-content">
-            <span className="marquee-text-enhanced">
-              ★ WELCOME TO MoveFit Physio ★ Your Journey To Wellness Starts Here
-              ★ WELCOME TO MoveFit Physio ★ Expert Care ★ WELCOME TO MoveFit
-              Physio ★
-            </span>
-            <span className="marquee-text-enhanced" aria-hidden="true">
-              ★ WELCOME TO MoveFit Physio ★ Your Journey To Wellness Starts Here
-              ★ WELCOME TO MoveFit Physio ★ Expert Care ★ WELCOME TO MoveFit
-              Physio ★
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-teal-200/30 dark:bg-teal-900/20 rounded-full blur-3xl animate-float"></div>
@@ -79,7 +61,7 @@ function Hero() {
         ></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-16 text-center">
+      <div className="relative max-w-7xl mx-auto px-6 py-16 text-center">
         <div
           className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
