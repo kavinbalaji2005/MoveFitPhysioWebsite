@@ -246,7 +246,7 @@ function PainLocator() {
                 {/* Enhanced 3D Body Diagram */}
                 <div className="relative mx-auto" style={{ maxWidth: "350px" }}>
                   <svg
-                    viewBox="0 0 200 420"
+                    viewBox="0 -10 200 430"
                     className="w-full h-auto drop-shadow-xl"
                     style={{ minHeight: "550px" }}
                   >

@@ -12,7 +12,14 @@ function Header({ scrolled }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "services", "pain-locator", "contact"];
+      const sections = [
+        "hero",
+        "about",
+        "services",
+        "gallery",
+        "pain-locator",
+        "contact",
+      ];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -53,6 +60,7 @@ function Header({ scrolled }: HeaderProps) {
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
+    { id: "gallery", label: "Gallery" },
     { id: "pain-locator", label: "Pain Locator" },
     { id: "contact", label: "Contact" },
   ];
@@ -65,20 +73,22 @@ function Header({ scrolled }: HeaderProps) {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-3">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <div className="flex items-center space-x-2 sm:space-x-3 min-w-0">
           <img
             src="/assets/logo.jpeg"
             alt="MoveFit Physiotherapy Centre"
-            className="h-12 sm:h-14 w-auto object-contain rounded-lg shadow-sm"
+            className="h-10 sm:h-12 md:h-14 w-auto object-contain rounded-lg shadow-sm flex-shrink-0"
           />
-          <span className="font-bold text-lg sm:text-xl tracking-tight text-gray-900 dark:text-white">
-            <span className="hidden xs:inline">MoveFit </span>
-            <span className="text-teal-600 dark:text-teal-400 hidden sm:inline">
+          <span className="font-bold text-sm xs:text-base sm:text-lg md:text-xl tracking-tight text-gray-900 dark:text-white truncate">
+            <span className="text-teal-600 dark:text-teal-400 hidden md:inline">
               MoveFit Physiotherapy Centre
             </span>
+            <span className="text-teal-600 dark:text-teal-400 hidden sm:inline md:hidden">
+              MoveFit Physio
+            </span>
             <span className="text-teal-600 dark:text-teal-400 sm:hidden">
-              MoveFit Physiotherapy
+              MoveFit
             </span>
           </span>
         </div>

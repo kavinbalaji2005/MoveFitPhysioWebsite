@@ -27,9 +27,14 @@
       name="author"
       content="R Dharanika B.P.T, M.IA.P - MoveFit Physiotherapy Centre"
     />
-    <meta name="robots" content="index, follow" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
 
     <!-- Geo Tags -->
     <meta name="geo.region" content="IN-TN" />
@@ -46,9 +51,15 @@
     />
     <meta
       property="og:description"
-      content="Expert physiotherapy services in Coimbatore. Specialized treatment for back pain, sports injuries, rehabilitation, and chronic pain management. 10+ years experience."
+      content="Expert physiotherapy services in Coimbatore. Specialized treatment for back pain, sports injuries, rehabilitation, and chronic pain management. 25+ years experience."
     />
-    <meta property="og:image" content="/assets/logo.jpeg" />
+    <meta
+      property="og:image"
+      content="https://movefitphysio.com/assets/logo.jpeg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MoveFit Physiotherapy Centre Logo" />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="MoveFit Physiotherapy Centre" />
 
@@ -63,7 +74,14 @@
       property="twitter:description"
       content="Expert physiotherapy services in Coimbatore. Specialized treatment for back pain, sports injuries, rehabilitation, and chronic pain management."
     />
-    <meta property="twitter:image" content="/assets/logo.jpeg" />
+    <meta
+      property="twitter:image"
+      content="https://movefitphysio.com/assets/logo.jpeg"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="MoveFit Physiotherapy Centre Logo"
+    />
 
     <!-- Contact Information -->
     <meta
@@ -85,6 +103,20 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://movefitphysio.com/" />
+
+    <!-- Alternate for mobile -->
+    <link
+      rel="alternate"
+      media="only screen and (max-width: 640px)"
+      href="https://movefitphysio.com/"
+    />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" as="image" href="/assets/logo.jpeg" />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -23,7 +23,7 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`group relative glass-premium dark:glass-dark p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-teal-500 dark:hover:border-teal-400 ${
+      className={`group relative glass-premium dark:glass-dark p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl border-2 border-transparent hover:border-teal-500 dark:hover:border-teal-400 transition-all duration-300 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{
@@ -33,28 +33,31 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
       }}
     >
       {/* Number Badge */}
-      <div className="absolute top-6 right-6 w-12 h-12 bg-teal-50 dark:bg-teal-900/30 rounded-full flex items-center justify-center group-hover:bg-teal-100 dark:group-hover:bg-teal-900/50 transition-colors">
-        <span className="text-teal-600 dark:text-teal-400 font-bold text-lg">
+      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 bg-teal-50 dark:bg-teal-900/30 rounded-full flex items-center justify-center group-hover:bg-teal-100 dark:group-hover:bg-teal-900/50 transition-colors">
+        <span className="text-teal-600 dark:text-teal-400 font-bold text-base sm:text-lg">
           {service.number}
         </span>
       </div>
 
       {/* Icon with gradient background */}
-      <div className="relative mb-6" style={{ transform: "translateZ(50px)" }}>
-        <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300">
-          <service.icon className="w-10 h-10 text-white" />
+      <div
+        className="relative mb-4 sm:mb-5 md:mb-6"
+        style={{ transform: "translateZ(50px)" }}
+      >
+        <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300">
+          <service.icon className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 text-white" />
         </div>
       </div>
 
       <h3
-        className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors"
+        className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors pr-12"
         style={{ transform: "translateZ(40px)" }}
       >
         {service.title}
       </h3>
 
       <p
-        className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"
+        className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-4 sm:mb-5 md:mb-6"
         style={{ transform: "translateZ(30px)" }}
       >
         {service.description}
@@ -68,12 +71,12 @@ function ServiceCard({ service, index, isVisible }: ServiceCardProps) {
             element.scrollIntoView({ behavior: "smooth" });
           }
         }}
-        className="inline-flex items-center text-teal-600 dark:text-teal-400 font-semibold group-hover:gap-2 transition-all"
+        className="inline-flex items-center text-sm sm:text-base text-teal-600 dark:text-teal-400 font-semibold group-hover:gap-2 transition-all touch-manipulation"
         style={{ transform: "translateZ(30px)" }}
       >
         Learn More
         <svg
-          className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform"
+          className="w-4 h-4 sm:w-5 sm:h-5 ml-1 group-hover:translate-x-1 transition-transform"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -147,28 +150,28 @@ function Services() {
   ];
 
   return (
-    <section id="services" ref={sectionRef} className="py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" ref={sectionRef} className="py-16 sm:py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div
-          className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${
+          className={`text-center mb-12 sm:mb-16 md:mb-20 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 dark:text-white mb-3 sm:mb-4 tracking-tight px-2 sm:px-4">
             Our{" "}
             <span className="text-teal-600 dark:text-teal-400">
               Physiotherapy Services
             </span>{" "}
             in Coimbatore
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-600 to-blue-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto px-4">
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-teal-600 to-blue-600 mx-auto rounded-full mb-4 sm:mb-6"></div>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto px-3 sm:px-4">
             Comprehensive rehabilitation services in Coimbatore tailored to your
             needs
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
