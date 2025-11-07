@@ -103,10 +103,10 @@ function Footer() {
                   <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400" />
                 </div>
                 <a
-                  href="mailto:contact@movefitphysio.in"
+                  href="mailto:dharanikas77@gmail.com"
                   className="text-gray-400 hover:text-teal-400 transition-colors text-xs sm:text-sm break-all touch-manipulation"
                 >
-                  contact@movefitphysio.com
+                  dharanikas77@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-2 sm:space-x-3 group">

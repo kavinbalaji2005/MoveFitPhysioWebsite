@@ -1,15 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { useMouseTilt } from "../hooks/useMouseTilt";
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const {
-    ref: cardRef,
-    tiltStyle,
-    handleMouseMove,
-    handleMouseLeave,
-  } = useMouseTilt(8);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,15 +62,24 @@ function About() {
               {/* Decorative background */}
               <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 md:-top-6 md:-left-6 w-full h-full bg-gradient-to-br from-teal-100 to-blue-100 dark:from-teal-900/30 dark:to-blue-900/30 rounded-2xl sm:rounded-3xl"></div>
 
-              {/* Image placeholder with professional styling */}
+              {/* Image with professional styling */}
               <div className="relative bg-gradient-to-br from-teal-200 to-blue-200 dark:from-teal-900/50 dark:to-blue-900/50 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl aspect-square flex items-center justify-center">
-                <div className="text-center p-4 sm:p-6 md:p-8">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 mx-auto mb-3 sm:mb-4 md:mb-6 bg-white/30 dark:bg-gray-900/30 backdrop-blur-sm rounded-full flex items-center justify-center">
+                {/* Blurred background logo */}
+                <img
+                  src="/assets/logo.jpeg"
+                  alt="MoveFit Physiotherapy Centre Logo"
+                  className="absolute inset-0 w-full h-full object-cover blur-md opacity-30"
+                />
+
+                {/* Foreground content */}
+                <div className="relative text-center p-4 sm:p-6 md:p-8 z-10">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 mx-auto mb-3 sm:mb-4 md:mb-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg">
                     <svg
-                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-teal-600 dark:text-teal-400"
+                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-teal-600 dark:text-teal-400 drop-shadow-lg"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      strokeWidth={2.5}
                     >
                       <path
                         strokeLinecap="round"
@@ -87,7 +89,13 @@ function About() {
                       />
                     </svg>
                   </div>
-                  <p className="text-white font-semibold text-sm sm:text-base md:text-lg">
+                  <p className="text-gray-900 dark:text-white font-extrabold text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3 drop-shadow-md">
+                    R Dharanika B.P.T, M.I.A.P
+                  </p>
+                  <p className="text-teal-600 dark:text-teal-400 font-bold text-base sm:text-lg md:text-xl mb-2 sm:mb-3 drop-shadow-md">
+                    Registration No: L - 6208
+                  </p>
+                  <p className="text-gray-800 dark:text-gray-200 font-semibold text-sm sm:text-base md:text-lg drop-shadow-md">
                     Consultant Physiotherapist
                   </p>
                 </div>
@@ -131,53 +139,6 @@ function About() {
               back pain, knee injuries, sports rehabilitation, and chronic pain
               management.
             </p>
-
-            {/* Credentials Card */}
-            <div
-              ref={cardRef}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              className="glass-premium dark:glass-dark p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl border-2 border-teal-100 dark:border-teal-800 shadow-lg hover:shadow-2xl transition-all duration-500"
-              style={{
-                transformStyle: "preserve-3d",
-                ...tiltStyle,
-              }}
-            >
-              <div className="flex items-start space-x-3 sm:space-x-4">
-                <div
-                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-teal-600 dark:bg-teal-500 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg"
-                  style={{ transform: "translateZ(50px)" }}
-                >
-                  <svg
-                    className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  style={{ transform: "translateZ(40px)" }}
-                  className="flex-1 min-w-0"
-                >
-                  <p className="text-base sm:text-lg md:text-xl text-gray-900 dark:text-white font-bold mb-1 sm:mb-2 break-words">
-                    R Dharanika B.P.T, M.I.A.P
-                  </p>
-                  <p className="text-teal-600 dark:text-teal-400 font-semibold text-sm sm:text-base md:text-lg">
-                    Registration No: L - 6208
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-400 mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">
-                    Certified & Experienced Physiotherapist
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

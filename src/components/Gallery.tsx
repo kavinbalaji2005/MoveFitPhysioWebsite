@@ -147,7 +147,7 @@ const Gallery = () => {
           }`}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-gray-900 dark:text-white mb-3 sm:mb-4 tracking-tight px-2 sm:px-4">
-            Our{" "}
+            {" "}
             <span className="text-teal-600 dark:text-teal-400">Gallery</span>
           </h2>
           <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-teal-600 to-blue-600 mx-auto rounded-full mb-4 sm:mb-6 animate-pulse"></div>
@@ -188,7 +188,7 @@ const Gallery = () => {
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="absolute inset-0 w-full h-full object-contain bg-gray-900 dark:bg-gray-950 transform md:group-hover:scale-105 transition-transform duration-700"
+                        className="absolute inset-0 w-full h-full object-contain bg-gray-100 dark:bg-gray-900 transform md:group-hover:scale-105 transition-transform duration-700"
                         loading="lazy"
                       />
 
@@ -205,8 +205,8 @@ const Gallery = () => {
 
                       {/* Mobile tap indicator */}
                       <div className="md:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="bg-white/10 backdrop-blur-sm rounded-full p-3 opacity-50">
-                          <ZoomIn className="w-6 h-6 text-white" />
+                        <div className="bg-black/20 dark:bg-white/10 backdrop-blur-sm rounded-full p-3 opacity-50">
+                          <ZoomIn className="w-6 h-6 text-gray-800 dark:text-white" />
                         </div>
                       </div>
 
@@ -221,14 +221,14 @@ const Gallery = () => {
             {/* Navigation Buttons - Smaller on mobile */}
             <button
               onClick={prevSlide}
-              className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 md:p-3 rounded-full glass-premium dark:glass-dark hover:bg-white/30 dark:hover:bg-white/20 text-gray-900 dark:text-white transition-all duration-300 border border-white/30 shadow-lg md:shadow-xl active:scale-95 md:hover:scale-110 z-10 touch-manipulation"
+              className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 md:p-3 rounded-full glass-premium dark:glass-dark hover:bg-white/40 dark:hover:bg-white/20 text-gray-900 dark:text-white transition-all duration-300 border border-gray-300/50 dark:border-white/30 shadow-lg md:shadow-xl active:scale-95 md:hover:scale-110 z-10 touch-manipulation"
               aria-label="Previous slide"
             >
               <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 md:p-3 rounded-full glass-premium dark:glass-dark hover:bg-white/30 dark:hover:bg-white/20 text-gray-900 dark:text-white transition-all duration-300 border border-white/30 shadow-lg md:shadow-xl active:scale-95 md:hover:scale-110 z-10 touch-manipulation"
+              className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 md:p-3 rounded-full glass-premium dark:glass-dark hover:bg-white/40 dark:hover:bg-white/20 text-gray-900 dark:text-white transition-all duration-300 border border-gray-300/50 dark:border-white/30 shadow-lg md:shadow-xl active:scale-95 md:hover:scale-110 z-10 touch-manipulation"
               aria-label="Next slide"
             >
               <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
@@ -243,7 +243,7 @@ const Gallery = () => {
                   className={`transition-all duration-300 rounded-full touch-manipulation ${
                     currentSlide === index
                       ? "w-5 sm:w-6 md:w-8 h-2 sm:h-2.5 md:h-3 bg-teal-500"
-                      : "w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-white/50 active:bg-white/80 md:hover:bg-white/80"
+                      : "w-2 sm:w-2.5 md:w-3 h-2 sm:h-2.5 md:h-3 bg-gray-400 dark:bg-white/50 active:bg-gray-600 dark:active:bg-white/80 md:hover:bg-gray-600 dark:md:hover:bg-white/80"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -313,30 +313,6 @@ const Gallery = () => {
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
-
-          {/* Thumbnail Navigation - Hidden on small mobile */}
-          <div className="hidden sm:flex absolute bottom-4 left-1/2 transform -translate-x-1/2 gap-2 overflow-x-auto max-w-[90vw] px-4 pb-2 scrollbar-hide">
-            {images.map((image, index) => (
-              <button
-                key={image.id}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage(index);
-                }}
-                className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-200 touch-manipulation ${
-                  selectedImage === index
-                    ? "border-teal-500 scale-110 shadow-lg shadow-teal-500/50"
-                    : "border-white/30 hover:border-white/60 active:scale-95 md:hover:scale-105"
-                }`}
-              >
-                <img
-                  src={image.src}
-                  alt={`Thumbnail ${image.id}`}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
         </div>
       )}
     </section>

@@ -12,14 +12,7 @@ function Header({ scrolled }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = [
-        "hero",
-        "about",
-        "services",
-        "gallery",
-        "pain-locator",
-        "contact",
-      ];
+      const sections = ["hero", "about", "services", "gallery", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -61,7 +54,6 @@ function Header({ scrolled }: HeaderProps) {
     { id: "about", label: "About" },
     { id: "services", label: "Services" },
     { id: "gallery", label: "Gallery" },
-    { id: "pain-locator", label: "Pain Locator" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -85,10 +77,10 @@ function Header({ scrolled }: HeaderProps) {
               MoveFit Physiotherapy Centre
             </span>
             <span className="text-teal-600 dark:text-teal-400 hidden sm:inline md:hidden">
-              MoveFit Physio
+              MoveFit Physiotherapy Centre
             </span>
             <span className="text-teal-600 dark:text-teal-400 sm:hidden">
-              MoveFit
+              MoveFit Physiotherapy
             </span>
           </span>
         </div>

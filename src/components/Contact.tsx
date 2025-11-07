@@ -140,9 +140,9 @@ function Contact() {
     },
     {
       icon: Mail,
-      label: "Email",
-      value: "contact@movefitphysio.in",
-      link: "mailto:contact@movefitphysio.in",
+      label: "Email Address",
+      value: "dharanikas77@gmail.com",
+      link: "mailto:dharanikas77@gmail.com",
       linkText: "Send Email",
     },
   ];

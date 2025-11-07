@@ -30,7 +30,7 @@ function Hero() {
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:contact@movefitphysio.in",
+      href: "mailto:dharanikas77@gmail.com",
       external: false,
     },
   ];
